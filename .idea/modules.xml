@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/gracefulwidgetplugin.iml" filepath="$PROJECT_DIR$/gracefulwidgetplugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/gracefulwidgetplugin_android.iml" filepath="$PROJECT_DIR$/android/gracefulwidgetplugin_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/android/gracefulwidgetplugin_example_android.iml" filepath="$PROJECT_DIR$/example/android/gracefulwidgetplugin_example_android.iml" />
+    </modules>
+  </component>
+</project>
