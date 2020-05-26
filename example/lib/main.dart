@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:graceful_widget_plugin/button/gf_button.dart';
-import 'package:graceful_widget_plugin/gf_loading.dart';
+import 'package:graceful_widget_plugin/loading/gf_loading.dart';
 
 void main() {
   runApp(MyAPP());

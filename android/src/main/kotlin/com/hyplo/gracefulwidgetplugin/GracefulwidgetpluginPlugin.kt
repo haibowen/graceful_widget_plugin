@@ -1,15 +1,24 @@
 package com.hyplo.gracefulwidgetplugin
 
+import android.view.View
 import androidx.annotation.NonNull;
+import com.hyplo.gracefulwidgetplugin_example.VideoView
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
 import io.flutter.plugin.common.PluginRegistry.Registrar
+import io.flutter.plugin.platform.PlatformView
 
 /** GracefulwidgetpluginPlugin */
 public class GracefulwidgetpluginPlugin: FlutterPlugin, MethodCallHandler {
+
+
+
+
+
+
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
     val channel = MethodChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "gracefulwidgetplugin")
     channel.setMethodCallHandler(GracefulwidgetpluginPlugin());
@@ -29,12 +38,18 @@ public class GracefulwidgetpluginPlugin: FlutterPlugin, MethodCallHandler {
     fun registerWith(registrar: Registrar) {
       val channel = MethodChannel(registrar.messenger(), "gracefulwidgetplugin")
       channel.setMethodCallHandler(GracefulwidgetpluginPlugin())
+
+      registrar.platformViewRegistry().registerViewFactory("plugins.bms_video_player/view", VideoViewFactory(registrar))
     }
   }
 
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
     if (call.method == "getPlatformVersion") {
       result.success("Android ${android.os.Build.VERSION.RELEASE}")
+    } else if (call.method == "loadUrl"){
+
+
+
     } else {
       result.notImplemented()
     }
@@ -42,4 +57,7 @@ public class GracefulwidgetpluginPlugin: FlutterPlugin, MethodCallHandler {
 
   override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
   }
+
+
+
 }
